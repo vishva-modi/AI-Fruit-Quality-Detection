@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Fruit Quality Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🍎 FruitAI</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/history">History</a>
+        <a href="/info">About</a>
+    </div>
+</nav>
+
+
+<div class="main-container">
+
+    <div class="card">
+
+        <div class="icon">🍎</div>
+
+        <h1>AI Fruit Quality Detection</h1>
+
+        <p class="subtitle">
+            Detect fruit type and freshness using
+            Artificial Intelligence.
+        </p>
+
+
+        <form action="/predict"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <div class="upload-box">
+
+                <div class="upload-icon">📷</div>
+
+                <h3>Upload or Capture Fruit Image</h3>
+
+                <p>Select an image from your device or camera</p>
+
+                <input type="file"
+                       name="image"
+                       id="imageInput"
+                       accept="image/*"
+                       capture="environment"
+                       required
+                       onchange="previewImage(event)">
+
+                <img id="preview"
+                     class="preview-image"
+                     alt="Image Preview">
+
+            </div>
+
+
+            <button type="submit" class="predict-btn">
+                🔍 Analyze Fruit
+            </button>
+
+        </form>
+
+
+        <p class="footer-text">
+            Powered by CNN • TensorFlow • Flask
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function previewImage(event) {
+
+    const preview = document.getElementById("preview");
+
+    if (event.target.files && event.target.files[0]) {
+
+        preview.src = URL.createObjectURL(event.target.files[0]);
+
+        preview.style.display = "block";
+    }
+}
+
+</script>
+
+</body>
+</html>

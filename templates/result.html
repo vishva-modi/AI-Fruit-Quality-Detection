@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">🍎 FruitAI</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/history">History</a>
+        <a href="/info">About</a>
+    </div>
+
+</nav>
+
+
+<div class="main-container">
+
+    <div class="card result-card">
+
+        <div class="icon">🤖</div>
+
+        <h1>Prediction Result</h1>
+
+        <p class="subtitle">
+            AI analysis completed successfully
+        </p>
+
+
+        <img src="{{ image_path }}"
+             class="result-image"
+             alt="Uploaded Fruit">
+
+
+        <div class="result-box">
+
+            <div class="result-item">
+                <span>🍎 Fruit</span>
+                <strong>{{ fruit }}</strong>
+            </div>
+
+
+            <div class="result-item">
+
+                <span>🥬 Quality</span>
+
+                <strong class="{{ quality.lower() }}">
+                    {% if quality == "Fresh" %}
+                        ✅ Fresh
+                    {% else %}
+                        ⚠️ Rotten
+                    {% endif %}
+                </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+                <span>📊 Confidence</span>
+
+                <strong>{{ confidence }}%</strong>
+
+            </div>
+
+        </div>
+
+
+        {% if quality == "Fresh" %}
+
+        <div class="status fresh-status">
+            ✅ This fruit appears to be fresh and good quality.
+        </div>
+
+        {% else %}
+
+        <div class="status rotten-status">
+            ⚠️ This fruit appears to be rotten or not fresh.
+        </div>
+
+        {% endif %}
+
+
+        <div class="button-group">
+
+            <a href="/" class="try-again">
+                🔄 Analyze Another
+            </a>
+
+            <a href="/history" class="secondary-btn">
+                📋 View History
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About FruitAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🍎 FruitAI</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/history">History</a>
+        <a href="/info">About</a>
+    </div>
+</nav>
+
+
+<div class="main-container">
+
+    <div class="card">
+
+        <div class="icon">🤖</div>
+
+        <h1>About FruitAI</h1>
+
+        <p class="subtitle">
+            AI Based Fruit Quality Detection
+        </p>
+
+
+        <div class="result-box">
+
+            <div class="result-item">
+                <span>🧠 AI Technology</span>
+                <strong>CNN</strong>
+            </div>
+
+            <div class="result-item">
+                <span>⚙️ Framework</span>
+                <strong>TensorFlow / Keras</strong>
+            </div>
+
+            <div class="result-item">
+                <span>🌐 Backend</span>
+                <strong>Flask</strong>
+            </div>
+
+            <div class="result-item">
+                <span>🍎 Fruits</span>
+                <strong>Apple, Banana, Orange</strong>
+            </div>
+
+            <div class="result-item">
+                <span>🔍 Classes</span>
+                <strong>6</strong>
+            </div>
+
+        </div>
+
+
+        <p class="subtitle">
+
+            This application uses a trained Convolutional Neural
+            Network to identify fruit type and determine whether
+            the fruit is fresh or rotten from an uploaded image.
+
+        </p>
+
+
+        <a href="/" class="try-again">
+            🏠 Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
